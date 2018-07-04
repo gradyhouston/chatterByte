@@ -29,7 +29,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "electron": "electron .",
-    "dev": "nf start -p 3000",
-    "node": "scripts/build.js"
+    "dev": "nf start -p 3000"
   }
 }

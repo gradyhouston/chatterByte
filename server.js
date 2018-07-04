@@ -6,7 +6,7 @@ const Chatkit = require('pusher-chatkit-server')
 
 const PORT = process.env.PORT || 3001;
 
-const app = express()
+const app = express();
 
 const chatkit = new Chatkit.default({
   instanceLocator: 'v1:us1:57f652ef-7003-449c-9cf0-3bc2b48acf10',

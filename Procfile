@@ -1,3 +1,2 @@
-react: npm start
-electron: node src/electron-react
 web: node server.js
+react: npm start

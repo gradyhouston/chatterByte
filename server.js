@@ -13,9 +13,9 @@ const chatkit = new Chatkit.default({
   key: '9cc60cfc-acdb-4125-8978-794b90817cdd:asCzIjHXeqYXJiJOabUnTLXc6uLjStuq870q3Zf4Fls='
 })
 
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static('/build'));
-}
+// if (process.env.NODE_ENV === 'production') {
+// 	app.use(express.static('/build'));
+// }
 
 // app.get('*', (request, response) => {
 // 	response.sendFile(path.join(__dirname, 'build/', 'public/index.html'));
@@ -45,6 +45,6 @@ app.post('/users', (req, res) => {
     })
 })
 
-app.listen(PORT, function(){
+app.listen(PORT, function() {
   console.log('Listening on PORT: ' + PORT)
 });

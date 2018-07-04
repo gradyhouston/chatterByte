@@ -17,9 +17,9 @@ if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('/build'));
 }
 
-app.get('*', (request, response) => {
-	response.sendFile(path.join(__dirname, 'build/', 'public/index.html'));
-});
+// app.get('*', (request, response) => {
+// 	response.sendFile(path.join(__dirname, 'build/', 'public/index.html'));
+// });
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())

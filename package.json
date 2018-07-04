@@ -6,7 +6,6 @@
   "main": "src/main.js",
   "devDependencies": {
     "electron": "^2.0.3",
-    "foreman": "^2.0.0",
     "react-scripts": "^1.0.14"
   },
   "dependencies": {
@@ -19,6 +18,7 @@
     "electron-rebuild": "^1.7.3",
     "emoji-mart": "^2.6.1",
     "express": "^4.16.3",
+    "hoek": "^5.0.3",
     "pusher-chatkit-server": "^0.12.0",
     "react": "^16.0.0",
     "react-desktop": "^0.3.0",

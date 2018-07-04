@@ -4,14 +4,22 @@ const cors = require('cors')
 const Chatkit = require('pusher-chatkit-server')
 // const config = require('./config')
 
+const PORT = process.env.PORT || 3001;
+
+const app = express()
+
 const chatkit = new Chatkit.default({
   instanceLocator: 'v1:us1:57f652ef-7003-449c-9cf0-3bc2b48acf10',
   key: '9cc60cfc-acdb-4125-8978-794b90817cdd:asCzIjHXeqYXJiJOabUnTLXc6uLjStuq870q3Zf4Fls='
 })
 
-const PORT = process.env.PORT || 3001;
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('/build'));
+}
 
-const app = express()
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, 'build/', 'public/index.html'));
+});
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())

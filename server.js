@@ -8,6 +8,9 @@ const chatkit = new Chatkit.default({
   instanceLocator: 'v1:us1:57f652ef-7003-449c-9cf0-3bc2b48acf10',
   key: '9cc60cfc-acdb-4125-8978-794b90817cdd:asCzIjHXeqYXJiJOabUnTLXc6uLjStuq870q3Zf4Fls='
 })
+
+const PORT = process.env.PORT || 3001;
+
 const app = express()
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -34,5 +37,6 @@ app.post('/users', (req, res) => {
     })
 })
 
-app.listen(3001)
-console.log('Running on port 3001')
+app.listen(PORT, function(){
+  console.log('Listening on PORT: ' + PORT)
+});

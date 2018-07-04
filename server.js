@@ -1,7 +1,8 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const cors = require('cors')
-const Chatkit = require('pusher-chatkit-server')
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const Chatkit = require('pusher-chatkit-server');
+const path = require("path");
 // const config = require('./config')
 
 const PORT = process.env.PORT || 3001;

@@ -21,9 +21,9 @@ const chatkit = new Chatkit.default({
 // 	response.sendFile(path.join(__dirname, 'build/', 'public/index.html'));
 // });
 // app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-app.use(cors())
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json());
+app.use(cors());
 
 app.post('/users', (req, res) => {
   const { username } = req.body

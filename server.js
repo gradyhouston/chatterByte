@@ -20,7 +20,7 @@ const chatkit = new Chatkit.default({
 // app.get('*', (request, response) => {
 // 	response.sendFile(path.join(__dirname, 'build/', 'public/index.html'));
 // });
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors())

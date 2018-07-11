@@ -14,18 +14,10 @@ const chatkit = new Chatkit.default({
   key: '9cc60cfc-acdb-4125-8978-794b90817cdd:asCzIjHXeqYXJiJOabUnTLXc6uLjStuq870q3Zf4Fls='
 })
 
-
-
-// app.get('/', function(req, res) {
-// res.send(200);
-// });
-
-// app.get('*', (request, response) => {
-// 	response.sendFile(path.join(__dirname, 'build/', 'public/index.html'));
-// });
 // app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/', express.static(path.join(__dirname, 'public')))
+app.use('/', express.static(path.join(__dirname, 'public')))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 app.use(cors());
 

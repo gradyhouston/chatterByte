@@ -1,16 +1,19 @@
 {
-  "name": "chatterByte",
-  "version": "0.0.1",
+  "name": "chatterbyte",
+  "version": "1.0.0",
   "license": "MIT",
-  "homepage": "./",
+  "description": "React Chat App",
+  "author": "Grady Houston <gradyhouston@gmail.com>",
   "main": "src/electron-starter.js",
-  "devDependencies": {
-    "electron": "^2.0.1",
-    "foreman": "^2.0.0",
-    "react-scripts": "^1.0.14"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "pack": "build --dir",
+    "dist": "build"
   },
   "dependencies": {
     "@pusher/chatkit": "^0.7.12",
+    "ajv": "^6.5.2",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
@@ -19,11 +22,8 @@
     "react-desktop": "^0.3.5",
     "react-dom": "^16.0.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "electron": "electron .",
-    "dev": "nf start -p 3000"
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "latest"
   }
 }

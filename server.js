@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('*', express.static('build', 'index.html'));
+app.get('*', express.static('index.html'));
 
 // app.get('*', function(req, res) {
 //   res.sendFile(path.join(__dirname, 'build', 'index.html'));

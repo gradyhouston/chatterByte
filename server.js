@@ -25,7 +25,7 @@ app.use(cors());
 // app.use('/', express.static('public'));
 
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'build', "static", 'index.html'));
 })
 
 app.post('/users', (req, res) => {

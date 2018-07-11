@@ -1,5 +1,5 @@
 {
-  "name": "min-electron-react",
+  "name": "chatterByte",
   "version": "0.0.1",
   "license": "MIT",
   "homepage": "./",
@@ -20,8 +20,6 @@
     "react-dom": "^16.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
     "node": "scripts/build.js",
     "test": "react-scripts test --env=jsdom",
     "electron": "electron .",

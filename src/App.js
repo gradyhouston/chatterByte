@@ -10,7 +10,7 @@ class App extends Component {
   }
 
   onUsernameSubmitted = username => {
-    fetch('http://localhost:3001/users', {
+    fetch('gentle-meadow-54724.herokuapp.com/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -24,9 +24,9 @@ app.use(cors());
 
 // app.get('*', express.static('index.html'));
 
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'app')));
 app.use("*",function(req,res){
-    res.sendfile(path.join(__dirname, 'build', 'index.html'));
+    res.sendfile(path.join(__dirname, 'app/build/index.html'));
   //res.send("test");
 }),
 

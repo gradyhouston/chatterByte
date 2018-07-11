@@ -16,15 +16,18 @@ const chatkit = new Chatkit.default({
 
 // app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, 'public'))
-})
+
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 app.use(cors());
 
 // app.use('/', express.static('public'));
+
+app.post('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'public/index.html'))
+})
+
 app.post('/users', (req, res) => {
   const { username } = req.body
   const user = { name: username, id: username }

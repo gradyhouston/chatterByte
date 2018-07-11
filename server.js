@@ -16,8 +16,8 @@ const chatkit = new Chatkit.default({
 
 // app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/index.html', function(req, res) {
-  res.sendFile(path.join(__dirname, 'public'))
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'public/index.html'))
 })
 
 app.use(bodyParser.urlencoded({ extended: false }))

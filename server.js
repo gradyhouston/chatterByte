@@ -22,7 +22,13 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('*', express.static('index.html'));
+// app.get('*', express.static('index.html'));
+
+app.use(express.static(path.join(__dirname, 'build')));
+app.use("*",function(req,res){
+    res.sendfile(path.join(__dirname, 'build', 'index.html'));
+  //res.send("test");
+}),
 
 // app.get('*', function(req, res) {
 //   res.sendFile(path.join(__dirname, 'build', 'index.html'));

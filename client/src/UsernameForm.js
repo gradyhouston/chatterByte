@@ -23,7 +23,7 @@ class UsernameForm extends Component {
     return (
       <div className="username-form">
         <form onSubmit={this.handleSubmit}>
-          <h2 className="welcome">Welcome to ChaturByte</h2>
+          <h2 className="welcome">Welcome to ChatterByte</h2>
           <div>
             <TextInput
               label=""

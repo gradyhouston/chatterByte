@@ -15,7 +15,10 @@ class Chat extends Component {
   componentDidMount() {
     const chatkit = new ChatManager({
       instanceLocator: 'v1:us1:57f652ef-7003-449c-9cf0-3bc2b48acf10',
-      userId: this.props.currentId
+      userId: this.props.currentId,
+      tokenProvider: new TokenProvider({
+        url: 'https://us1.pusherplatform.io/services/chatkit_token_provider/v1/57f652ef-7003-449c-9cf0-3bc2b48acf10/token'
+      })
     })
 
     chatkit

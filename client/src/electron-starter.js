@@ -17,6 +17,12 @@ function createWindow() {
       protocol: 'file:',
       slashes: true
     })
+
+    mainWindow.webContents.on('crashed', () => {
+      mainWindow.destroy();
+      createWindow();
+    });
+
   mainWindow.loadURL(startUrl)
 
   mainWindow.on('closed', function() {

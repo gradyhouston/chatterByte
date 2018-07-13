@@ -28,7 +28,7 @@ class Chat extends Component {
 
         return currentUser.subscribeToRoom({
           roomId: 11533419,
-          messageLimit: 1000,
+          messageLimit: 100,
           hooks: {
             onNewMessage: message => {
               this.setState({

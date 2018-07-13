@@ -10,7 +10,7 @@ class App extends Component {
   }
 
   onUsernameSubmitted = username => {
-    fetch('http://localhost:3001/users', {
+    fetch('https://chatterbyte.herokuapp.com/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

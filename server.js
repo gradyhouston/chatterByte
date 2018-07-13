@@ -44,6 +44,6 @@ app.post('/users', (req, res) => {
     })
 })
 
-app.listen(PORT, function() {
+app.listen(PORT, '0.0.0.0', function() {
   console.log('Listening on PORT: ' + PORT)
 });

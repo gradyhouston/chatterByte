@@ -9,7 +9,7 @@
     "node": "scripts/build.js",
     "pack": "build --dir",
     "dist": "build",
-    "heroku-postbuild": "cd client && install npm && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "dependencies": {
     "@pusher/chatkit": "^0.7.12",

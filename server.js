@@ -5,7 +5,7 @@ const Chatkit = require('pusher-chatkit-server');
 const path = require("path");
 // const config = require('./config')
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
@@ -14,26 +14,15 @@ const chatkit = new Chatkit.default({
   key: '9cc60cfc-acdb-4125-8978-794b90817cdd:asCzIjHXeqYXJiJOabUnTLXc6uLjStuq870q3Zf4Fls='
 })
 
-// app.use(express.static(path.join(__dirname, 'public')));
-
-
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 app.use(cors());
 
-// app.get('*', express.static('index.html'));
-
-app.use(express.static(path.join(__dirname, 'client/build')));
-
 app.get("*",function(req,res){
     res.sendFile(path.join(__dirname, '/client/build/index.html'));
-  //res.send("test");
-}),
-
-// app.get('*', function(req, res) {
-//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
-// })
+});
 
 app.post('/users', (req, res) => {
   const { username } = req.body

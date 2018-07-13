@@ -6,7 +6,6 @@
   "author": "Grady Houston <gradyhouston@gmail.com>",
   "main": "client/src/electron-starter.js",
   "scripts": {
-    "node": "scripts/build.js",
     "pack": "build --dir",
     "dist": "build",
     "heroku-postbuild": "cd client && npm install && npm run build"

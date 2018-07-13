@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "description": "React Chat App",
+  "proxy": "http://localhost:5000",
   "author": "Grady Houston <gradyhouston@gmail.com>",
   "main": "src/electron-starter.js",
   "scripts": {

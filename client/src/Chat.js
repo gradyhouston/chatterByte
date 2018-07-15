@@ -3,7 +3,8 @@ import { ChatManager, TokenProvider } from '@pusher/chatkit';
 import MessageList from './MessageList';
 import SendMessageForm from './SendMessageForm';
 import OnlineList from './OnlineList';
-// import config from '../configuration.js'
+
+import { tokenUrl, instanceLocator } from './config'
 
 class Chat extends Component {
   state = {
@@ -14,10 +15,10 @@ class Chat extends Component {
 
   componentDidMount() {
     const chatkit = new ChatManager({
-      instanceLocator: 'v1:us1:57f652ef-7003-449c-9cf0-3bc2b48acf10',
+      instanceLocator,
       userId: this.props.currentId,
       tokenProvider: new TokenProvider({
-        url: 'https://us1.pusherplatform.io/services/chatkit_token_provider/v1/57f652ef-7003-449c-9cf0-3bc2b48acf10/token'
+        url: tokenUrl
       })
     })
 
@@ -54,6 +55,33 @@ class Chat extends Component {
       roomId: this.state.currentRoom.id
     })
   }
+
+
+
+  // componentWillUpdate(nextProps) {
+  //   this.messagesChanged = nextProps.messages.length !== this.props.messages.length;
+  //     if (this.messagesChanged) {
+  //       const { messageList } = this.refs;
+  //       const scrollPos = messageList.scrollTop;
+  //       const scrollBottom = (messageList.scrollHeight - messageList.clientHeight);
+  //       this.scrollAtBottom = (scrollBottom <= 0) || (scrollPos === scrollBottom);
+  //     if (!this.scrollAtBottom) {
+  //       const numMessages = messageList.childNodes.length;
+  //       this.topMessage = numMessages === 0 ? null : messageList.childNodes[0];
+  //     }
+  //   }
+  // }
+  //
+  // componentDidUpdate(prevProps) {
+  //   if (this.messagesChanged) {
+  //     if (this.scrollAtBottom) {
+  //       this.scrollToBottom();
+  //     }
+  //   if (this.topMessage) {
+  //       ReactDOM.findDOMNode(this.topMessage).scrollIntoView();
+  //     }
+  //   }
+  // }
 
   render() {
     return (

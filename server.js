@@ -9,13 +9,13 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-const pusher = new Pusher({
-    appId: 'APP_ID',
-    key: 'APP_KEY',
-    secret: 'SECRET',
-    cluster: 'YOUR CLUSTER',
-    encrypted: true
-});
+// const pusher = new Pusher({
+//     appId: 'APP_ID',
+//     key: 'APP_KEY',
+//     secret: 'SECRET',
+//     cluster: 'YOUR CLUSTER',
+//     encrypted: true
+// });
 
 // const chatkit = new Chatkit.default({
 //   instanceLocator: 'v1:us1:57f652ef-7003-449c-9cf0-3bc2b48acf10',

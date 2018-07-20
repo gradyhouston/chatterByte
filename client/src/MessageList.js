@@ -6,6 +6,7 @@ import {
   ListViewRow,
   Text
 } from 'react-desktop/macOs'
+// import Home from '/components/Home.js'
 
 class MessageList extends Component {
 

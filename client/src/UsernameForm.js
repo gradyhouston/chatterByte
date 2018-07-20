@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { TextInput } from 'react-desktop/macOs'
 import { Button } from 'react-desktop/macOs'
+// import firebase from "firebase";
+// import Login from "./Login";
+// import base, { firebaseApp } from "../base";
+
 
 class UsernameForm extends Component {
   constructor() {

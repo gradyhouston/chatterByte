@@ -1,13 +1,13 @@
 // import React from 'react'
-// import ReactDOM from 'react-dom'
-// import App from './App.js'
+import ReactDOM from 'react-dom'
+import App from './App.js'
 // import firebase from 'firebase/app'
+import React, { Component } from 'react'
 import 'firebase/app'
 import 'firebase/auth'
-import 'firebase/firestore'
+// import 'firebase/firestore'
 import './index.css'
-import React, { Component } from 'react'
-// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap/dist/css/bootstrap.css';
 import { Route, BrowserRouter, Link, Redirect, Switch } from 'react-router-dom'
 import Login from './Login'
 import Register from './Register'
@@ -16,7 +16,7 @@ import UsernameForm from './UsernameForm'
 import { logout } from './auth'
 import { firebaseAuth } from './constants'
 
-// ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'))
 
 function PrivateRoute ({component: Component, authed, ...rest}) {
   return (
@@ -40,7 +40,7 @@ function PublicRoute ({component: Component, authed, ...rest}) {
   )
 }
 
-export default class App extends Component {
+export default class Firebase extends Component {
   state = {
     authed: false,
     loading: true,

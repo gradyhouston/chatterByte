@@ -1,6 +1,6 @@
 // import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App.js'
+// import App from './src'
 // import firebase from 'firebase/app'
 import React, { Component } from 'react'
 import 'firebase/app'
@@ -12,11 +12,11 @@ import { Route, BrowserRouter, Link, Redirect, Switch } from 'react-router-dom'
 import Login from './Login'
 import Register from './Register'
 import Home from './Home'
+import Dashboard from './Dashboard'
 import UsernameForm from './UsernameForm'
 import { logout } from './auth'
 import { firebaseAuth } from './constants'
 
-ReactDOM.render(<App />, document.getElementById('app'))
 
 function PrivateRoute ({component: Component, authed, ...rest}) {
   return (
@@ -35,12 +35,12 @@ function PublicRoute ({component: Component, authed, ...rest}) {
       {...rest}
       render={(props) => authed === false
         ? <Component {...props} />
-        : <Redirect to='/UsernameForm' />}
+        : <Redirect to='/Dashboard' />}
     />
   )
 }
 
-export default class Firebase extends Component {
+export default class App extends Component {
   state = {
     authed: false,
     loading: true,
@@ -77,7 +77,7 @@ export default class Firebase extends Component {
                   <Link to="/" className="navbar-brand">Home</Link>
                 </li>
                 <li>
-                  <Link to="/UsernameForm" className="navbar-brand">Dashboard</Link>
+                  <Link to="/Dashboard" className="navbar-brand">Dashboard</Link>
                 </li>
                 <li>
                   {this.state.authed
@@ -101,7 +101,7 @@ export default class Firebase extends Component {
                 <Route path='/' exact component={Home} />
                 <PublicRoute authed={this.state.authed} path='/login' component={Login} />
                 <PublicRoute authed={this.state.authed} path='/register' component={Register} />
-                <PrivateRoute authed={this.state.authed} path='/UsernameForm' component={UsernameForm} />
+                <PrivateRoute authed={this.state.authed} path='/Dashboard' component={Dashboard} />
                 <Route render={() => <h3>No Match</h3>} />
               </Switch>
             </div>

@@ -17,10 +17,10 @@ const app = express();
 //     encrypted: true
 // });
 
-// const chatkit = new Chatkit.default({
-//   instanceLocator: 'v1:us1:57f652ef-7003-449c-9cf0-3bc2b48acf10',
-//   key: '9cc60cfc-acdb-4125-8978-794b90817cdd:asCzIjHXeqYXJiJOabUnTLXc6uLjStuq870q3Zf4Fls='
-// })
+const chatkit = new Chatkit.default({
+  instanceLocator: 'v1:us1:57f652ef-7003-449c-9cf0-3bc2b48acf10',
+  key: '9cc60cfc-acdb-4125-8978-794b90817cdd:asCzIjHXeqYXJiJOabUnTLXc6uLjStuq870q3Zf4Fls='
+})
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(bodyParser.urlencoded({ extended: false }))

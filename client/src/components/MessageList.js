@@ -1,5 +1,12 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import 'materialize-css/dist/css/materialize.css';
+// import PropTypes from 'prop-types';
+// import { withStyles } from '@material-ui/core/styles';
+// import List from '@material-ui/core/List';
+// import ListItem from '@material-ui/core/ListItem';
+// import ListItemIcon from '@material-ui/core/ListItemIcon';
+// import ListItemText from '@material-ui/core/ListItemText';
+
 import {
   ListView,
   ListViewSection,
@@ -10,17 +17,11 @@ import {
 
 class MessageList extends Component {
 
-  componentWillUpdate() {
-    const node = ReactDOM.findDOMNode(this)
-    this.shouldScrollToBottom = node.scrollTop + node.clientHeight + 100 >= node.scrollHeight
-}
+//   componentWillUpdate() {
+//
+// }
 
-  componentDidUpdate() {
-    if (this.shouldScrollToBottom) {
-        const node = ReactDOM.findDOMNode(this)
-        node.scrollTop = node.scrollHeight
-    }
-}
+
 
   render() {
     return (

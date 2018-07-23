@@ -5,6 +5,15 @@ import {
   ListViewRow,
   Text
 } from 'react-desktop/macOs'
+import 'materialize-css/dist/css/materialize.css';
+// import PropTypes from 'prop-types';
+// import { withStyles } from '@material-ui/core/styles';
+// import List from '@material-ui/core/List';
+// import ListItem from '@material-ui/core/ListItem';
+// import ListItemIcon from '@material-ui/core/ListItemIcon';
+// import ListItemText from '@material-ui/core/ListItemText';
+// import Grid from '@material-ui/core/Grid';
+
 
 class OnlineList extends Component {
   render() {
@@ -33,8 +42,7 @@ class OnlineList extends Component {
       <ListViewRow key={id}>
         <div
           className="online-list-item"
-          style={{
-            background: status === 'online' ? '#6BD761' : 'gray'
+          style={{ overflow: 'hidden', background: status === 'online' ? '#6BD761' : 'gray'
           }}
         />
         <Text color="white" size="13">

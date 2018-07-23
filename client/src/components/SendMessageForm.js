@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { Button, TextInput } from 'react-desktop/macOs'
+// import { Button, TextInput } from 'react-desktop/macOs'
+import 'materialize-css/dist/css/materialize.css';
+
 
 class SendMessageForm extends Component {
   state = {
@@ -21,18 +23,19 @@ class SendMessageForm extends Component {
 
   render() {
     return (
-      <div className="send-message-form-container">
+      <div className="send-message-form-container" ref={el => this.props.setRef(el)} >
         <form onSubmit={this.onSubmit} className="send-message-form">
-          <TextInput
+          <div className="input-field col s6">
+          <input className="message-input"
             placeholder="Say something..."
             type="text"
             onChange={this.onChange}
             value={this.state.text}
-            className="message-input"
-            />
-          <Button color="blue" type="submit">
+          />
+        </div>
+          <button color="blue" height="50px" type="submit">
             Send
-          </Button>
+          </button>
         </form>
       </div>
     )

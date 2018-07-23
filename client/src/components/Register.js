@@ -16,8 +16,8 @@ export default class Register extends Component {
   }
   render () {
     return (
-      <div className="col-sm-6 col-sm-offset-3">
-        <h1>Register</h1>
+      <div className="col-sm-6 col-sm-offset-3 register-login">
+        {/* <h4>Register</h4> */}
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label>Email</label>

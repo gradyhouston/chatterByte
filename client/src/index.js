@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './main';
+import Main from './components/Main';
 import './index.css';
 
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<Main />, document.getElementById('app'))

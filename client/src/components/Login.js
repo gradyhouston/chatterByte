@@ -20,6 +20,15 @@
 
 import React, { Component } from 'react'
 import { login, resetPassword } from './auth'
+import PropTypes from 'prop-types';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import { withStyles } from '@material-ui/core/styles';
+import Input from '@material-ui/core/Input';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import InputLabel from '@material-ui/core/InputLabel';
 
 function setErrorMsg(error) {
   return {
@@ -43,8 +52,8 @@ export default class Login extends Component {
   }
   render () {
     return (
-      <div className="col-sm-6 col-sm-offset-3">
-        <h1> Login </h1>
+      <div className="col-sm-6 col-sm-offset-3 login-form">
+        {/* <h4> Login </h4> */}
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label>Email</label>

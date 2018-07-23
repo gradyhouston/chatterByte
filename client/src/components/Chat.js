@@ -3,14 +3,19 @@ import { ChatManager, TokenProvider } from '@pusher/chatkit';
 import MessageList from './MessageList';
 import SendMessageForm from './SendMessageForm';
 import OnlineList from './OnlineList';
-
+import * as _ from 'lodash';
 import { tokenUrl, instanceLocator } from './config'
 
 class Chat extends Component {
-  state = {
-    currentUser: null,
-    currentRoom: {},
-    messages: []
+  constructor(props){
+    super(props);
+    this.state = {
+      currentUser: null,
+      currentRoom: {},
+      messages: []
+    }
+    this.setRef = this.setRef.bind(this);
+    this.scrollToBottom = _.debounce(this.scrollToBottom, 100, false);
   }
 
   componentDidMount() {
@@ -56,32 +61,23 @@ class Chat extends Component {
     })
   }
 
+  componentDidUpdate(prevProps, prevState){
+    if(prevState.messages.length !== this.state.messages.length){
+      this.scrollToBottom();
+    }
+  }
+
+  scrollToBottom = () => {
+    if(this.el !== undefined){
+      this.el.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+  setRef(el){
+    this.el = el;
+  }
 
 
-  // componentWillUpdate(nextProps) {
-  //   this.messagesChanged = nextProps.messages.length !== this.props.messages.length;
-  //     if (this.messagesChanged) {
-  //       const { messageList } = this.refs;
-  //       const scrollPos = messageList.scrollTop;
-  //       const scrollBottom = (messageList.scrollHeight - messageList.clientHeight);
-  //       this.scrollAtBottom = (scrollBottom <= 0) || (scrollPos === scrollBottom);
-  //     if (!this.scrollAtBottom) {
-  //       const numMessages = messageList.childNodes.length;
-  //       this.topMessage = numMessages === 0 ? null : messageList.childNodes[0];
-  //     }
-  //   }
-  // }
-  //
-  // componentDidUpdate(prevProps) {
-  //   if (this.messagesChanged) {
-  //     if (this.scrollAtBottom) {
-  //       this.scrollToBottom();
-  //     }
-  //   if (this.topMessage) {
-  //       ReactDOM.findDOMNode(this.topMessage).scrollIntoView();
-  //     }
-  //   }
-  // }
 
   render() {
     return (
@@ -94,7 +90,7 @@ class Chat extends Component {
         </div>
         <div className="chat">
           <MessageList messages={this.state.messages} />
-          <SendMessageForm onSend={this.onSend} />
+          <SendMessageForm onSend={this.onSend} setRef={this.setRef} />
         </div>
       </div>
     )

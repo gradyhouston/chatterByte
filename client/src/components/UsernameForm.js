@@ -46,7 +46,7 @@ class UsernameForm extends Component {
               <div className="input-field col s12">
                 {/* <input placeholder="Type in a username" id="first_name" type="text" value={this.state.username} */}
                 {/* onChange={this.handleChange} className="validate" /> */}
-                <input type="text" className="form-control" value={this.state.username} onChange={this.handleChange}id="nameField" name="nameField" placeholder="Enter your name" required />
+                <input type="text" className="form-control" value={this.state.username} onChange={this.handleChange}id="nameField" name="nameField" placeholder="Enter a username (no spaces)" required />
                   {/* <label htmlFor="first_name"></label> */}
                 </div>
               </div>

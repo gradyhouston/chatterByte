@@ -159,7 +159,9 @@ body {
 .username-form {
   padding: 10px;
   background: #152836;
-  width: 360px;
+  /* width: 360px; */
+  display: flex;
+  justify-content: center;
   margin: 100px auto;
   color: white;
 }

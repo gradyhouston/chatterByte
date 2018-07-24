@@ -9,13 +9,13 @@ import 'firebase/auth'
 // import '../index.css'
 // import 'bootstrap/dist/css/bootstrap.css';
 // import 'materialize-css/dist/css/materialize.css';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import { Route, BrowserRouter, Link, Redirect, Switch } from 'react-router-dom'
 import Login from './Login'
 import Register from './Register'
 import Home from './Home'
-import Dashboard from './Dashboard'
-import UsernameForm from './UsernameForm'
+// import Dashboard from './Dashboard'
+// import UsernameForm from './UsernameForm'
 import { logout } from './auth'
 import { firebaseAuth } from './constants'
 // import { TextInput } from 'react-desktop/macOs'

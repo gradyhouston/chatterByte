@@ -37,6 +37,9 @@ export default class Register extends Component {
           }
           <button type="submit" className="btn btn-primary">Register</button>
         </form>
+        <div className="footer">
+          &copy;2018 Grady Houston
+        </div>
       </div>
     )
   }

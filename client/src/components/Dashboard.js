@@ -3,9 +3,10 @@ import React, { Component } from 'react'
 export default class Dashboard extends Component {
   render () {
     return (
-      <div>
-        Dashboard test. This is a protected route. You can only see this if you're authed.
+      <div className="footer">
+        &copy;2018 Grady Houston
       </div>
+
     )
   }
 }

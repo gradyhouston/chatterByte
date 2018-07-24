@@ -37,7 +37,7 @@ class App extends Component {
 
     if (this.state.currentScreen === 'chat') {
       return <Chat currentId={this.state.currentId} />
-    }
+    } 
   }
 }
 

@@ -20,15 +20,15 @@
 
 import React, { Component } from 'react'
 import { login, resetPassword } from './auth'
-import PropTypes from 'prop-types';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import { withStyles } from '@material-ui/core/styles';
-import Input from '@material-ui/core/Input';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import InputLabel from '@material-ui/core/InputLabel';
+// import PropTypes from 'prop-types';
+// import Grid from '@material-ui/core/Grid';
+// import Button from '@material-ui/core/Button';
+// import TextField from '@material-ui/core/TextField';
+// import { withStyles } from '@material-ui/core/styles';
+// import Input from '@material-ui/core/Input';
+// import AccountCircle from '@material-ui/icons/AccountCircle';
+// import InputAdornment from '@material-ui/core/InputAdornment';
+// import InputLabel from '@material-ui/core/InputLabel';
 
 function setErrorMsg(error) {
   return {
@@ -73,6 +73,9 @@ export default class Login extends Component {
           }
           <button type="submit" className="btn btn-primary">Login</button>
         </form>
+        <div className="footer">
+          &copy;2018 Grady Houston
+        </div>
       </div>
     )
   }

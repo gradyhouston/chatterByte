@@ -159,7 +159,7 @@ body {
 .username-form {
   padding: 10px;
   background: #152836;
-  width: 30% !important;
+  width: 360px;
   margin: 100px auto;
   color: white;
 }
@@ -295,9 +295,9 @@ text-decoration: none;
 .login-form {
   /* margin: 100px 10px 100px 450px; */
   color: white;
-  width: 30%;
+  width: 25%;
   /* display: inline-block; */
-  display: flex;
+  /* display: flex; */
   margin: 100px auto;
   justify-content: center;
 }
@@ -305,9 +305,9 @@ text-decoration: none;
 .register-login {
   /* margin: 100px 10px 100px 450px; */
   color: white;
-  width: 30%;
+  width: 25%;
   /* display: inline-block; */
-  display: flex;
+  /* display: flex; */
   margin: 100px auto;
   justify-content: center;
 }

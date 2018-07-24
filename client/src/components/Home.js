@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import chatterbyteLogoRecolor from './chatterbyteLogoRecolor.svg';
-
+import chatterbyteLogoRecolor from 'public/chatterbyteLogoRecolor.svg';
 export default class Home extends Component {
   render () {
     return (

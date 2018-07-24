@@ -28,7 +28,7 @@ body {
 
 .wrapper {
   display: flex;
-  height: 89vh;
+  height: 93vh;
   overflow-x: hidden;
   overflow-y: hidden;
   margin-top: 10px;
@@ -137,6 +137,10 @@ body {
   font-size: 1.5em;
 }
 
+.logo {
+  max-width: 65%;
+}
+
 .usernameform-welcome {
   font-size: 2em;
   text-align: center;
@@ -150,6 +154,14 @@ body {
   width: 340px;
   color: white;
   margin: 0;
+}
+
+.username-form {
+  padding: 10px;
+  background: #152836;
+  width: 30% !important;
+  margin: 100px auto;
+  color: white;
 }
 
 .MuiInput-root-5 {
@@ -281,17 +293,23 @@ text-decoration: none;
 }
 
 .login-form {
-  margin: 100px 10px 100px 450px;
+  /* margin: 100px 10px 100px 450px; */
   color: white;
   width: 30%;
-  display: inline-block;
+  /* display: inline-block; */
+  display: flex;
+  margin: 100px auto;
+  justify-content: center;
 }
 
 .register-login {
-  margin: 100px 10px 100px 450px;
+  /* margin: 100px 10px 100px 450px; */
   color: white;
   width: 30%;
-  display: inline-block;
+  /* display: inline-block; */
+  display: flex;
+  margin: 100px auto;
+  justify-content: center;
 }
 
 .btn {

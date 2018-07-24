@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import chatterbytelogorecolor from '../chatterbytelogorecolor';
+import chatterbytelogorecolor from './chatterbytelogorecolor';
 export default class Home extends Component {
   render () {
     return (

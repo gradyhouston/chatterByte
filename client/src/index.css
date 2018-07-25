@@ -6,6 +6,7 @@ body {
 }
 
 .username-form {
+  font-family: BlinkMacSystemFont, sans-serif !important;
   padding: 10px;
   background: #152836;
   width: 360px;
@@ -131,10 +132,63 @@ body {
 }
 
 .home-welcome {
+  font-family: BlinkMacSystemFont, sans-serif;
   margin-top: 100px;
   text-align: center;
   color: white;
   font-size: 1.5em;
+}
+
+.home-register-text {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #29a69a; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .05em; /* Adjust as needed */
+  -webkit-animation:
+    typing 2s steps(50, end),
+    blink-caret .75s  infinite;
+          animation:
+    typing 2s steps(50, end),
+    blink-caret .75s  infinite;
+  width: 31%;
+}
+
+/* The typing effect */
+@-webkit-keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 31% }
+}
+
+/* The typewriter cursor effect */
+@-webkit-keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #29a69a; }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #29a69a; }
+}
+
+/* effect-shine */
+.logo:hover {
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 1.5s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+  }
 }
 
 .logo {
@@ -142,11 +196,13 @@ body {
 }
 
 .usernameform-welcome {
+  font-family: BlinkMacSystemFont, sans-serif !important;
   font-size: 2em;
   text-align: center;
 }
 
 .usernameform-textfield {
+  font-family: BlinkMacSystemFont, sans-serif !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,6 +220,36 @@ body {
   justify-content: center;
   margin: 100px auto;
   color: white;
+}
+
+.usernameform-message {
+  font-family: BlinkMacSystemFont, sans-serif !important;
+  font-size: 10px;
+  margin: auto;
+  display: table;
+  color: #9e9e9e;
+}
+
+.usernameform-control {
+  width: 112% !important;
+  margin: 5px auto 20px -14px !important;
+  background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 0;
+    outline: none;
+    height: 3rem;
+    /* width: 100%; */
+    font-size: 1rem;
+    /* margin: 5px auto 20px -14px; */
+    padding: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .MuiInput-root-5 {
@@ -294,7 +380,12 @@ text-decoration: none;
   color: white;
 }
 
+.form-control {
+  font-family: BlinkMacSystemFont, sans-serif !important;
+}
+
 .login-form {
+  font-family: BlinkMacSystemFont, sans-serif !important;
   /* margin: 100px 10px 100px 450px; */
   color: white;
   /* width: 25%; */
@@ -305,6 +396,7 @@ text-decoration: none;
 }
 
 .register-login {
+  font-family: BlinkMacSystemFont, sans-serif !important;
   /* margin: 100px 10px 100px 450px; */
   color: white;
   /* width: 25%; */
@@ -326,6 +418,7 @@ text-decoration: none;
 }
 
 .footer {
+  font-family: BlinkMacSystemFont, sans-serif !important;
   font-size: 14px;
   display: flex;
   justify-content: center;

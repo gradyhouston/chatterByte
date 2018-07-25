@@ -6,8 +6,8 @@
 
 <h4>How to install:</h4>
 
-<p>Be sure to ```npm install``` in the <em>root</em> directory <strong>and</strong> in the <em>client</em> directory</p>
-<p>Type ```npm start``` in your terminal</p>
+<p>Be sure to `npm install` in the <em>root</em> directory <strong>and</strong> in the <em>client</em> directory</p>
+<p>Type `npm start` in your terminal</p>
 
 <h4>How to use:</h4>
 

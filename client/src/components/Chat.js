@@ -4,7 +4,7 @@ import MessageList from './MessageList';
 import SendMessageForm from './SendMessageForm';
 import OnlineList from './OnlineList';
 import * as _ from 'lodash';
-import { tokenUrl, instanceLocator } from './config'
+import { tokenUrl, instanceLocator, key } from './config'
 
 class Chat extends Component {
     constructor(props) {
@@ -22,6 +22,7 @@ class Chat extends Component {
         const chatkit = new ChatManager({
             instanceLocator,
             userId: this.props.currentId,
+            key: key,
             tokenProvider: new TokenProvider({
                 url: tokenUrl
             })

@@ -33,7 +33,7 @@ class Chat extends Component {
                 this.setState({ currentUser })
 
                 return currentUser.subscribeToRoom({
-                    roomId: 12644849,
+                    roomId: 19450556,
                     messageLimit: 100,
                     hooks: {
                         onNewMessage: message => {
@@ -87,16 +87,16 @@ class Chat extends Component {
             <
             OnlineList currentUser = { this.state.currentUser }
             users = { this.state.currentRoom.users }
-            /> <
-            /div> <
+            /> < /
+            div > <
             div className = "chat" >
             <
             MessageList messages = { this.state.messages }
             /> <
             SendMessageForm onSend = { this.onSend }
             setRef = { this.setRef }
-            /> <
-            /div> <
+            /> < /
+            div > <
             /div>
         )
     }

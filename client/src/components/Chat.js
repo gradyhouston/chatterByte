@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ChatManager, TokenProvider } from '@pusher/chatkit';
+import { ChatManager, TokenProvider } from '@pusher/chatkit-client';
 import MessageList from './MessageList';
 import SendMessageForm from './SendMessageForm';
 import OnlineList from './OnlineList';
@@ -7,94 +7,99 @@ import * as _ from 'lodash';
 import { tokenUrl, instanceLocator } from './config'
 
 class Chat extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      currentUser: null,
-      currentRoom: {},
-      messages: []
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentUser: null,
+            currentRoom: {},
+            messages: []
+        }
+        this.setRef = this.setRef.bind(this);
+        this.scrollToBottom = _.debounce(this.scrollToBottom, 100, false);
     }
-    this.setRef = this.setRef.bind(this);
-    this.scrollToBottom = _.debounce(this.scrollToBottom, 100, false);
-  }
 
-  componentDidMount() {
-    const chatkit = new ChatManager({
-      instanceLocator,
-      userId: this.props.currentId,
-      tokenProvider: new TokenProvider({
-        url: tokenUrl
-      })
-    })
-
-    chatkit
-      .connect()
-      .then(currentUser => {
-        this.setState({ currentUser })
-
-        return currentUser.subscribeToRoom({
-          roomId: 12644849,
-          messageLimit: 100,
-          hooks: {
-            onNewMessage: message => {
-              this.setState({
-                messages: [...this.state.messages, message]
-              })
-            },
-            onUserCameOnline: () => this.forceUpdate(),
-            onUserWentOffline: () => this.forceUpdate(),
-            onUserJoined: () => this.forceUpdate()
-          }
+    componentDidMount() {
+        const chatkit = new ChatManager({
+            instanceLocator,
+            userId: this.props.currentId,
+            tokenProvider: new TokenProvider({
+                url: tokenUrl
+            })
         })
-      })
-      .then(currentRoom => {
-        console.log('currentRoom', currentRoom)
-        this.setState({ currentRoom })
-      })
-      .catch(error => console.error('error', error))
-  }
 
-  onSend = text => {
-    this.state.currentUser.sendMessage({
-      text,
-      roomId: this.state.currentRoom.id
-    })
-  }
+        chatkit
+            .connect()
+            .then(currentUser => {
+                this.setState({ currentUser })
 
-  componentDidUpdate(prevProps, prevState){
-    if(prevState.messages.length !== this.state.messages.length){
-      this.scrollToBottom();
+                return currentUser.subscribeToRoom({
+                    roomId: 12644849,
+                    messageLimit: 100,
+                    hooks: {
+                        onNewMessage: message => {
+                            this.setState({
+                                messages: [...this.state.messages, message]
+                            })
+                        },
+                        onUserCameOnline: () => this.forceUpdate(),
+                        onUserWentOffline: () => this.forceUpdate(),
+                        onUserJoined: () => this.forceUpdate()
+                    }
+                })
+            })
+            .then(currentRoom => {
+                console.log('currentRoom', currentRoom)
+                this.setState({ currentRoom })
+            })
+            .catch(error => console.error('error', error))
     }
-  }
 
-  scrollToBottom = () => {
-    if(this.el !== undefined){
-      this.el.scrollIntoView({ behavior: "smooth" });
+    onSend = text => {
+        this.state.currentUser.sendMessage({
+            text,
+            roomId: this.state.currentRoom.id
+        })
     }
-  }
 
-  setRef(el){
-    this.el = el;
-  }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.messages.length !== this.state.messages.length) {
+            this.scrollToBottom();
+        }
+    }
+
+    scrollToBottom = () => {
+        if (this.el !== undefined) {
+            this.el.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+
+    setRef(el) {
+        this.el = el;
+    }
 
 
 
-  render() {
-    return (
-      <div className="wrapper">
-        <div>
-          <OnlineList
-            currentUser={this.state.currentUser}
-            users={this.state.currentRoom.users}
-          />
-        </div>
-        <div className="chat">
-          <MessageList messages={this.state.messages} />
-          <SendMessageForm onSend={this.onSend} setRef={this.setRef} />
-        </div>
-      </div>
-    )
-  }
+    render() {
+        return ( <
+            div className = "wrapper" >
+            <
+            div >
+            <
+            OnlineList currentUser = { this.state.currentUser }
+            users = { this.state.currentRoom.users }
+            /> <
+            /div> <
+            div className = "chat" >
+            <
+            MessageList messages = { this.state.messages }
+            /> <
+            SendMessageForm onSend = { this.onSend }
+            setRef = { this.setRef }
+            /> <
+            /div> <
+            /div>
+        )
+    }
 }
 
 export default Chat

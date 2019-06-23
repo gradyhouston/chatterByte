@@ -1,33 +1,32 @@
 {
-  "name": "chatterbyte",
-  "version": "1.0.0",
-  "license": "MIT",
-  "description": "React Chat App",
-  "author": "Grady Houston <gradyhouston@gmail.com>",
-  "main": "client/src/electron-starter.js",
-  "scripts": {
-    "pack": "build --dir",
-    "dist": "build",
-    "heroku-postbuild": "cd client && npm install && npm run build"
-  },
-  "dependencies": {
-    "@pusher/chatkit": "^0.7.12",
-    "@pusher/chatkit-client": "^1.5.0",
-    "@pusher/chatkit-server": "^1.2.0",
-    "ajv": "^6.5.2",
-    "body-parser": "^1.18.3",
-    "cors": "^2.8.4",
-    "events": "^3.0.0",
-    "express": "^4.16.3",
-    "history": "^4.7.2",
-    "hoek": "^5.0.3",
-    "node": "^12.4.0",
-    "pusher": "^1.5.1",
-    "pusher-chatkit-server": "^0.12.0",
-    "pusher-js": "^4.1.0"
-  },
-  "devDependencies": {
-    "electron": "latest",
-    "electron-builder": "^20.44.4"
-  }
+    "name": "chatterbyte",
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "React Chat App",
+    "author": "Grady Houston <gradyhouston@gmail.com>",
+    "main": "client/src/electron-starter.js",
+    "scripts": {
+        "pack": "build --dir",
+        "dist": "build",
+        "heroku-postbuild": "cd client && npm install && npm run build"
+    },
+    "dependencies": {
+        "@pusher/chatkit-client": "^1.5.0",
+        "@pusher/chatkit-server": "^1.2.0",
+        "ajv": "^6.5.2",
+        "body-parser": "^1.18.3",
+        "cors": "^2.8.4",
+        "events": "^3.0.0",
+        "express": "^4.16.3",
+        "history": "^4.7.2",
+        "hoek": "^5.0.3",
+        "node": "^10.16.0",
+        "pusher": "^1.5.1",
+        "pusher-chatkit-server": "^0.12.0",
+        "pusher-js": "^4.1.0"
+    },
+    "devDependencies": {
+        "electron": "latest",
+        "electron-builder": "^20.44.4"
+    }
 }

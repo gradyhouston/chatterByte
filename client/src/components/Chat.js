@@ -11,8 +11,8 @@ class Chat extends Component {
         super(props);
         this.state = {
             currentUser: null,
-            currentRoom: {},
-            messages: []
+            roomId: {},
+            text: []
         }
         this.setRef = this.setRef.bind(this);
         this.scrollToBottom = _.debounce(this.scrollToBottom, 100, false);
@@ -37,14 +37,20 @@ class Chat extends Component {
                     roomId: "19450556",
                     messageLimit: 100,
                     hooks: {
-                        onNewMessage: message => {
+                        onMessage: message => {
                             this.setState({
                                 messages: [...this.state.messages, message]
                             })
                         },
                         onUserCameOnline: () => this.forceUpdate(),
                         onUserWentOffline: () => this.forceUpdate(),
-                        onUserJoined: () => this.forceUpdate()
+                        onUserJoined: () => this.forceUpdate(),
+                        onUserLeft: () => this.forceUpdate(),
+                        onUserStartedTyping: () => this.forceUpdate(),
+                        onUserStoppedTyping: () => this.forceUpdate(),
+                        onPresenceChanged: () => this.forceUpdate()
+
+
                     }
                 })
             })
